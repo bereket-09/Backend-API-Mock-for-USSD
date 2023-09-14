@@ -33,12 +33,23 @@ app.post("/offers", async (req, res) => {
       {}
     );
 
+    // Check if packageGroupId is missing in the request
+    if (!spec.packageGroupId) {
+      const message = "packageGroupId is missing in the request";
+      console.error(message);
+      return res.status(409).json({ code: 400, message });
+    }
+
     const { languageId: requestLanguageId, packageGroupId } = spec;
     // Get priority languageId
     const languageId = requestLanguageId || customerLanguageId;
 
     // Get offers array by filtering the packages collection
-    const offers = await Package.find({ languageId, packageGroupId });
+    const offers = await Package.find({
+      languageId,
+      packageGroupId: spec.packageGroupId,
+    });
+    // const offers = await Package.find({ languageId, packageGroupId });
     console.log("Offers:", offers);
     if (offers.length === 0) {
       const message = "No offers found for the given specifications";

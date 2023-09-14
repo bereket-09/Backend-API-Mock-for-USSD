@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "17cf06ef-9c32-40ba-a096-e29588a39083",
+		"name": "USSDTranningTibco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Query Offers API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceId\": \"251711111111\",\r\n    \"useCase\": \"getOffers\",\r\n    \"serviceSpecification\": [\r\n        {\r\n            \"name\": \"languageId\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"name\": \"productGroupId\",\r\n            \"value\": \"2\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/offers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceId\": \"251711111111\",\r\n    \"offerId\": \"65035bdd6488680b78311967\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/subscriptions/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subscriptions",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/balance/:serviceId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"balance",
+						":serviceId"
+					],
+					"variable": [
+						{
+							"key": "serviceId",
+							"value": "251711111111"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
