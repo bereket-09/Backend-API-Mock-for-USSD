@@ -37,7 +37,7 @@ app.post("/offers", async (req, res) => {
     if (!spec.packageGroupId) {
       const message = "packageGroupId is missing in the request";
       console.error(message);
-      return res.status(409).json({ code: 400, message });
+      return res.status(409).json({ code: 409, message });
     }
 
     const { languageId: requestLanguageId, packageGroupId } = spec;
