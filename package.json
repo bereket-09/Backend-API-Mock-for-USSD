@@ -1,0 +1,13 @@
+{
+  "name": "TibcoTranning",
+  "version": "1.0.0",
+  "description": "testTibcoBackend",
+  "main": "index.js",
+  "author": "Bereket Zelalem",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.1"
+  }
+}

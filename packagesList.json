@@ -1,0 +1,109 @@
+[
+    {
+      "id": "voice-package-1",
+      "packageName": "50 Minutes Voice Package",
+      "languageId": "en",
+      "packageGroupId": 1,
+      "price": 50,
+      "minuteAmount": 50
+    },
+    {
+      "id": "voice-package-2",
+      "packageName": "180 Minutes Voice Package",
+      "languageId": "en",
+      "packageGroupId": 1,
+      "price": 1850,
+      "minuteAmount": 180
+    },
+    {
+      "id": "voice-package-3",
+      "packageName": "Unlimited Talk & Text Package",
+      "languageId": "en",
+      "packageGroupId": 1,
+      "price": 650,
+      "minuteAmount": null
+    },
+    {
+      "id": "data-package-1",
+      "packageName": "500MB Data Package",
+      "languageId": "en",
+      "packageGroupId": 2,
+      "price": 225,
+      "dataAmount": 500
+    },
+    {
+      "id": "data-package-2",
+      "packageName": "1GB Data Package",
+      "languageId": "en",
+      "packageGroupId": 2,
+      "price": 500,
+      "dataAmount": 1000
+    },
+    {
+      "id": "data-package-3",
+      "packageName": "2GB Data + Unlimited Talk & Text Package",
+      "languageId": "en",
+      "packageGroupId": 2,
+      "price": 540,
+      "dataAmount": 2000
+    },
+    {
+      "id": "data-package-4",
+      "packageName": "5GB Data Package",
+      "languageId": "en",
+      "packageGroupId": 2,
+      "price": 400,
+      "dataAmount": 5000
+    },
+    {
+      "id": "data-package-5",
+      "packageName": "50GB Data + Unlimited Calls & Texts Package",
+      "languageId": "en",
+      "packageGroupId": 2,
+      "price": 1000,
+      "dataAmount": 50000
+    },
+    {
+      "id": "sms-package-1",
+      "packageName": "50 SMS Package",
+      "languageId": "en",
+      "packageGroupId": 3,
+      "price": 50,
+      "smsAmount": 50
+    },
+    {
+      "id": "sms-package-2",
+      "packageName": "100 SMS/Day Package",
+      "languageId": "en",
+      "packageGroupId": 3,
+      "price": 75,
+      "smsAmount": 2800
+    },
+    {
+      "id": "sms-package-3",
+      "packageName": "Unlimited SMS Package",
+      "languageId": "en",
+      "packageGroupId": 3,
+      "price": 225,
+      "smsAmount": null
+    },
+    {
+      "id": "sms-package-4",
+      "packageName": "Unlimited SMS + 10GB Data Package",
+      "languageId": "en",
+      "packageGroupId": 3,
+      "price": 335,
+      "smsAmount": null,
+      "dataAmount": 10000
+    },
+    {
+      "id": "sms-package-5",
+      "packageName": "Unlimited SMS, Calls & 50GB Data Package",
+      "languageId": "en",
+      "packageGroupId": 3,
+      "price": 1350,
+      "smsAmount": null,
+      "minuteAmount": null,
+      "dataAmount": 50000
+    }
+  ]
