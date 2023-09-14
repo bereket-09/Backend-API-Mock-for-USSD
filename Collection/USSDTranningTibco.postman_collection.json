@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"serviceId\": \"251711111111\",\r\n    \"useCase\": \"getOffers\",\r\n    \"serviceSpecification\": [\r\n        {\r\n            \"name\": \"languageId\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"name\": \"productGroupId\",\r\n            \"value\": \"2\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"serviceId\": \"251711111111\",\r\n    \"useCase\": \"getOffers\",\r\n    \"serviceSpecification\": [\r\n        {\r\n            \"name\": \"languageId\",\r\n            \"value\": \"2\"\r\n        },\r\n        {\r\n            \"name\": \"packageGroupId\",\r\n            \"value\": \"\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
