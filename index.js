@@ -132,6 +132,7 @@ app.post("/subscriptions/add", async (req, res) => {
 
     // Return success response with updated user data and package offer details
     return res.json({
+      code: 200,
       status: "success",
       message: "Offer subscribed",
       serviceId: user.serviceId,
