@@ -66,7 +66,7 @@ app.post("/offers", async (req, res) => {
       offers,
     };
 
-    // Send response
+    // Send response 
     res.status(200).json(response);
   } catch (err) {
     console.error(err);
@@ -191,4 +191,4 @@ app.get("/balance/:serviceId", async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => console.log("Server started on port 3000"));
+app.listen(5000, () => console.log("Server started on port 3000"));
