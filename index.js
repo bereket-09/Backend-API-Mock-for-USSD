@@ -6,8 +6,10 @@ const Customer = require("./models/customer");
 const app = express();
 app.use(express.json()); // Add middleware for parsing JSON data
 
-const uri =
-  "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
+// const uri =
+// "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
+
+const uri = "mongodb://localhost:27017/TibcoTest";
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -66,7 +68,7 @@ app.post("/offers", async (req, res) => {
       offers,
     };
 
-    // Send response 
+    // Send response
     res.status(200).json(response);
   } catch (err) {
     console.error(err);
@@ -91,32 +93,32 @@ app.post("/subscriptions/add", async (req, res) => {
     const packageOffer = await Package.findById(validOfferId);
     if (!packageOffer) {
       return res
-        .status(404)
-        .json({ code: 404, status: "error", message: "Offer not found" });
+        .status(200)
+        .json({ code: 604, status: "Error", message: "Offer not found" });
     }
 
     const user = await Customer.findOne({ serviceId });
     if (!user) {
       return res
-        .status(408)
-        .json({ code: 408, status: "error", message: "Customer not found" });
+        .status(200)
+        .json({ code: 608, status: "Error", message: "Customer not found" });
     }
 
     // Check if account balance is sufficient to subscribe to the offer
 
     if (user.accountBalance < packageOffer.price) {
-      return res.status(407).json({
-        code: 407,
-        status: "error",
+      return res.status(200).json({
+        code: 607,
+        status: "Error",
         message: "Insufficient account balance",
       });
     }
 
     // Check if user has already subscribed to offer
     if (user.CurrentOffers.some((offer) => offer.id === offerId)) {
-      return res.status(409).json({
-        code: 409,
-        status: "error",
+      return res.status(200).json({
+        code: 609,
+        status: "Error",
         message: "Offer already subscribed",
       });
     } else {
@@ -156,8 +158,8 @@ app.get("/balance/:serviceId", async (req, res) => {
     const user = await Customer.findOne({ serviceId });
 
     if (!user) {
-      return res.status(404).json({
-        code: 404,
+      return res.status(200).json({
+        code: 604,
         status: "error",
         message: "User not found",
       });
@@ -191,4 +193,4 @@ app.get("/balance/:serviceId", async (req, res) => {
 });
 
 // Start the server
-app.listen(5000, () => console.log("Server started on port 3000"));
+app.listen(3000, () => console.log("Server started on port 3000"));

@@ -216,49 +216,22 @@ const packages = [
   },
 ];
 
-// const offers = [
-//   {
-//     "id": "offer-1",
-//     "offerName": "100 Extra Minutes with a Voice Package",
-//     "languageId": "1",
-//     "validityDays": 30,
-//     "packageGroupId": 1,
-//     "description": "Get 100 extra minutes with any voice package purchased",
-//     "imageURL": "https://example.com/offer-a.png"
-//   },
-//   {
-//     "id": "offer-2",
-//     "offerName": "100 Extra MB with a Data Package",
-//     "languageId": "1",
-//     "validityDays": 30,
-//     "packageGroupId": 2,
-//     "description": "Get 100 extra MB with any data package purchased",
-//     "imageURL": "https://example.com/offer-b.png"
-//   },
-//   {
-//     "id": "offer-3",
-//     "offerName": "50 Extra SMS with an SMS Package",
-//     "languageId": "1",
-//     "validityDays": 30,
-//     "packageGroupId": 3,
-//     "description": "Get 50 extra SMS with any SMS package purchased",
-//     "imageURL": "https://example.com/offer-c.png"
-//   }
-// ];
+// const uri =
+// "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
 
-// Replace with your MongoDB connection string
-const uri =
-  "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
+const uri = "mongodb://localhost:27018/TibcoTest";
 
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000, // Give up initial connection after 5 seconds
+  })
   .then(() => {
     console.log("Connected to MongoDB Atlas");
     const Package = require("../package");
-    // const Offer = require("./models/offer");
     Promise.all(
       packages.map((packageData) => new Package(packageData).save())
-      // offers.map((offerData) => new Offer(offerData).save())
     )
       .then(() => console.log("Data inserted successfully"))
       .catch((error) => console.error(`Error inserting data: ${error}`))

@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 // Replace with your MongoDB connection string
-const uri =
-  "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
+// const uri =
+// "mongodb+srv://eshop-admin:admin%40eshop@e-shope.txsjiod.mongodb.net/TibcoTest?retryWrites=true&w=majority";
+
+const uri = "mongodb://localhost:27018/TibcoTest";
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -30,7 +32,7 @@ mongoose
         ],
       },
       { collection: "customers" }
-    ); // <-- Specify the collection name here
+    );
 
     const Customer = mongoose.model("customer", customerSchema);
 
@@ -187,6 +189,7 @@ mongoose
       },
     ];
 
+    
     Customer.insertMany(customers)
       .then(() => console.log("Data inserted successfully"))
       .catch((error) => console.error(`Error inserting data: ${error}`))
